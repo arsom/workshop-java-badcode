@@ -28,4 +28,17 @@ public class RegisterBusinessTest {
         });
         assertEquals("Last name is required.",exception.getMessage());
     }
+
+    @Test
+    @DisplayName("Test Register Failure , result = Email is required.")
+    public void case03(){
+        RegisterBusiness business = new RegisterBusiness();
+        Exception exception = assertThrows(ArgumentNullException.class, () -> {
+            Speaker speaker = new Speaker();
+            speaker.setFirstName("Arsom");
+            speaker.setLastName("Mahatthanamongkol");
+            business.register(null,speaker);
+        });
+        assertEquals("Email is required.",exception.getMessage());
+    }
 }
