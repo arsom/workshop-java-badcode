@@ -18,8 +18,8 @@ public class RegisterBusinessGetFreeTest {
             "10,0",
     })
     public void getFree(int exp,int free){
-        RegisterBusiness business = new RegisterBusiness();
-        int actualFree = business.getFee(exp);
+        Speaker speaker = new Speaker();
+        int actualFree = speaker.getFee(exp);
         Assertions.assertEquals(free,actualFree);
     }
 }
